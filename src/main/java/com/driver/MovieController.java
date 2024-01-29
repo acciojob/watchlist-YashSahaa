@@ -13,19 +13,19 @@ import java.util.List;
 public class MovieController {
     @Autowired
     MovieService movieService;
-    @PostMapping("/addMovie")
+    @PostMapping("/add-movie")
     public ResponseEntity<String> addMovie(@RequestBody Movie movie){
         movieService.addMovie(movie);
         return new ResponseEntity<>("Movie added successfully", HttpStatus.CREATED);
     }
 
-    @PostMapping("/addDirector")
+    @PostMapping("/add-director")
     public ResponseEntity<String> addDirector(@RequestBody Director director){
         movieService.addDirector(director);
         return new ResponseEntity<>("Director added successfully", HttpStatus.CREATED);
     }
 
-    @PutMapping("/addMovieDirectorPair")
+    @PutMapping("/add-movie-director-pair")
     public ResponseEntity<String> addMovieDirectorPair(@RequestParam String movieName, @RequestParam String directorName){
         movieService.addMovieDirectorPair(movieName,directorName);
         return new ResponseEntity<>("Movie-Director pair added successfully", HttpStatus.CREATED);
