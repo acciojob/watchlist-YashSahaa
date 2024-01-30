@@ -11,6 +11,11 @@ public class MovieRepository {
     HashMap<String , Movie> movDb;
     HashMap<String , Director> dirDb;
     HashMap<String,List<String>> mdDb;
+    MovieRepository(){
+        this.movDb = new HashMap<>();
+        this.dirDb = new HashMap<>();
+        this.mdDb = new HashMap<>();
+    }
 
     public void addMovie(Movie movie){
         movDb.put(movie.getName(),movie);
